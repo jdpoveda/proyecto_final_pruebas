@@ -3,19 +3,24 @@
 # Dependencies: git java adb calabash genymotion
 
 # Settings
-REPO=https://github.com/maxcruz/todo_app.git
-BRANCH=master
-PACKAGE=com.example.todoapp
+# REPO=https://github.com/maxcruz/todo_app.git
+REPO=$1
+#BRANCH=master
+BRANCH=$2
+#PACKAGE=com.example.todoapp
+PACKAGE=$3
 
-SAMPLES=1
-MONKEY_EVENTS=100
+#SAMPLES=1 
+SAMPLES=$4 
+#MONKEY_EVENTS=100
+MONKEY_EVENTS=$5
 
 MDROID_REPO=https://gitlab.com/miso-4208-labs/MDroidPlus
 MDROID_PATH=MDroidPlus
 MDROID_RUN=$MDROID_PATH/target/MDroidPlus-1.0.0.jar
 
 GENYMOTION_RUN=/Applications/Genymotion.app/Contents/MacOS/player.app/Contents/MacOS/player
-GENYMOTION_EMULATOR_ID=68c57ceb-2216-404f-810e-c98472925081
+GENYMOTION_EMULATOR_ID=9ce3c878-2a9c-4673-94cf-af51fee8afee
 
 # Get the app directory from repo url
 APP_PATH=$(echo $REPO | awk -F/ '{print $5}' | rev | cut -c 5- | rev)
@@ -124,9 +129,9 @@ for I in $SELECTED; do
         if [ -d "calabash" ]; then
           
           # Sign apk and run tests
-          /Users/juanpoveda/.rvm/gems/ruby-2.4.2/bin/calabash-android resign $APK
+          /Users/juanpoveda/.rvm/gems/ruby-2.4.2/wrappers/calabash-android resign $APK
           cd calabash
-          /Users/juanpoveda/.rvm/gems/ruby-2.4.2/wrappers/bundle exec /Users/juanpoveda/.rvm/gems/ruby-2.4.2/bin/calabash-android run ../$APK | tail -n3 >> "../../$LOG_FILE.tmp"
+          /Users/juanpoveda/.rvm/gems/ruby-2.4.2/wrappers/bundle exec /Users/juanpoveda/.rvm/gems/ruby-2.4.2/wrappers/calabash-android run ../$APK | tail -n3 >> "../../$LOG_FILE.tmp"
           cd ..
 
         fi 

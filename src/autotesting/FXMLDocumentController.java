@@ -18,6 +18,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
 /**
  *
@@ -28,12 +29,27 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private Label label;
     
+    @FXML 
+    private TextField repo;
+    
+    @FXML 
+    private TextField branch;
+    
+    @FXML 
+    private TextField pack;
+    
+    @FXML 
+    private TextField samples;
+    
+    @FXML 
+    private TextField monkeys;
+    
     @FXML
     private void handleButtonAction(ActionEvent event) {
         try {
             System.out.println("You clicked me!");
             //label.setText("Hello World!");
-            ProcessBuilder pb = new ProcessBuilder("/Users/juanpoveda/NetBeansProjects/AutoTesting/auto.sh");
+            ProcessBuilder pb = new ProcessBuilder("/Users/juanpoveda/NetBeansProjects/AutoTesting/auto.sh", repo.getText(), branch.getText(), pack.getText(), samples.getText(), monkeys.getText());
             Map<String, String> env = pb.environment();
             env.put("ANDROID_HOME", "/Users/juanpoveda/Library/Android/sdk");
             pb.redirectOutput(new File("out.txt"));

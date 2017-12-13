@@ -8,16 +8,25 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="231.0" prefWidth="438.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="autotesting.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="306.0" prefWidth="438.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="autotesting.FXMLDocumentController">
     <children>
-      <Label fx:id="label" layoutX="14.0" layoutY="36.0" minHeight="16" minWidth="69" text="URL Git" />
-      <Label layoutX="14.0" layoutY="121.0" text="# Casos de Prueba" />
-      <TextField layoutX="76.0" layoutY="31.0" prefHeight="27.0" prefWidth="338.0" />
-      <TextField layoutX="136.0" layoutY="116.0" prefHeight="27.0" prefWidth="69.0" />
-      <TextField layoutX="345.0" layoutY="116.0" prefHeight="27.0" prefWidth="69.0" />
-      <Label layoutX="268.0" layoutY="121.0" text="# Mutantes" />
-      <Button onAction="#handleButtonAction" fx:id="button" layoutX="185.0" layoutY="172.0" mnemonicParsing="false" text="Ejecutar" />
-      <Label layoutX="144.0" layoutY="87.0" text="Presupuesto de Pruebas">
+      <Label fx:id="label" layoutX="10.0" layoutY="60.0" minHeight="16" minWidth="69" text="URL Git" />
+      <Label layoutX="10.0" layoutY="214.0" text="# Samples" />
+      <TextField id="repo" fx:id="repo" layoutX="72.0" layoutY="55.0" prefHeight="27.0" prefWidth="338.0" />
+      <TextField fx:id="samples" layoutX="89.0" layoutY="209.0" prefHeight="27.0" prefWidth="69.0" />
+      <TextField fx:id="monkeys" layoutX="341.0" layoutY="209.0" prefHeight="27.0" prefWidth="69.0" />
+      <Label layoutX="219.0" layoutY="214.0" text="# Monkey Events" />
+      <Button layoutX="183.0" layoutY="265.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Run SUT" />
+      <Label layoutX="185.0" layoutY="186.0" text="Test Budget ">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <TextField id="branch" fx:id="branch" layoutX="72.0" layoutY="91.0" prefHeight="27.0" prefWidth="338.0" />
+      <Label fx:id="label1" layoutX="10.0" layoutY="96.0" minHeight="16" minWidth="69" text="Branch" />
+      <Label fx:id="label11" layoutX="10.0" layoutY="131.0" minHeight="16" minWidth="69" text="Package" />
+      <TextField id="pack" fx:id="pack" layoutX="72.0" layoutY="126.0" prefHeight="27.0" prefWidth="338.0" />
+      <Label layoutX="199.0" layoutY="31.0" text="App Info">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
