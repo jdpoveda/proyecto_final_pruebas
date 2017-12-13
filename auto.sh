@@ -50,8 +50,8 @@ fi
 # Verify that MDROID+ is built
 if [ ! -f "$MDROID_RUN" ]; then
   cd MDroidPlus
-  mvn clean
-  mvn package
+  /Users/juanpoveda/apache-maven-3.5.2/bin/mvn clean
+  /Users/juanpoveda/apache-maven-3.5.2/bin/mvn package
   cd ..
 fi
 
